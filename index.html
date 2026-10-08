@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Requehua - Centro de Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rustic: {
+                            50: '#faf8f5',
+                            100: '#f5f0e6',
+                            200: '#e3d5ca',
+                            300: '#d5bdaf',
+                            400: '#d4a373',
+                            800: '#8b5e3c',
+                            900: '#5c3d26'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for things Tailwind is too verbose for */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(92, 61, 38, 0.4); /* dark brown with opacity */
+            z-index: 0;
+        }
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-rustic-50 text-rustic-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-rustic-100/90 backdrop-blur-md sticky top-0 z-50 border-b border-rustic-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-serif font-bold text-rustic-800 tracking-wider">CASA REQUEHUA</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-rustic-900 hover:text-rustic-800 font-medium">Inicio</a>
+                    <a href="#about" class="text-rustic-900 hover:text-rustic-800 font-medium">Nosotros</a>
+                    <a href="gallery.html" class="text-rustic-900 hover:text-rustic-800 font-medium">Galería</a>
+                    <a href="#contact" class="text-rustic-900 hover:text-rustic-800 font-medium">Reservas</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-rustic-900 hover:text-rustic-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-rustic-100 border-t border-rustic-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-rustic-900 hover:bg-rustic-200 rounded-md">Inicio</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-rustic-900 hover:bg-rustic-200 rounded-md">Nosotros</a>
+                <a href="gallery.html" class="block px-3 py-2 text-base font-medium text-rustic-900 hover:bg-rustic-200 rounded-md">Galería</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-rustic-900 hover:bg-rustic-200 rounded-md">Reservas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="IMG_1517.mov" type="video/mp4">
+            <!-- Fallback for Safari if needed, though Safari supports .mov -->
+            <source src="IMG_1517.mov" type="video/quicktime">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="content-layer text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4 drop-shadow-md">Bienvenidos a Casa Requehua</h1>
+            <p class="text-lg md:text-2xl text-rustic-50 mb-8 max-w-2xl mx-auto drop-shadow-md">Un lugar de encuentro y relajo en medio de la naturaleza.</p>
+            <a href="#contact" class="inline-block bg-rustic-800 hover:bg-rustic-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">Reservar Ahora</a>
+        </div>
+    </div>
+
+    <!-- Description & Amenities -->
+    <section id="about" class="py-16 bg-rustic-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-rustic-900 mb-4">El Lugar Perfecto para tu Evento</h2>
+                <p class="text-lg text-rustic-800 max-w-3xl mx-auto">Disfruta de nuestras amplias instalaciones diseñadas para brindarte comodidad y momentos inolvidables. Casa Requehua cuenta con todo lo necesario para celebrar cumpleaños, paseos de curso, eventos de empresa o reuniones familiares.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Amenity 1 -->
+                <div class="bg-white rounded-xl shadow-md p-8 text-center border border-rustic-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rustic-100 text-rustic-800 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-rustic-900 mb-3">Piscina</h3>
+                    <p class="text-rustic-800">Refrescante piscina rodeada de áreas verdes, ideal para los días de sol.</p>
+                </div>
+                <!-- Amenity 2 -->
+                <div class="bg-white rounded-xl shadow-md p-8 text-center border border-rustic-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rustic-100 text-rustic-800 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-rustic-900 mb-3">Gran Quincho</h3>
+                    <p class="text-rustic-800">Amplio quincho equipado para asados y comidas al aire libre con tu grupo.</p>
+                </div>
+                <!-- Amenity 3 -->
+                <div class="bg-white rounded-xl shadow-md p-8 text-center border border-rustic-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rustic-100 text-rustic-800 mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-rustic-900 mb-3">Áreas Verdes</h3>
+                    <p class="text-rustic-800">Espacios naturales para relajarse y desconectar de la ciudad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-16 bg-rustic-100 border-t border-rustic-200 flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Map / Location -->
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-rustic-900 mb-6">Ubicación</h2>
+                    <p class="text-rustic-800 mb-6">Nos encontramos en un sector tranquilo, fácil de llegar. (Aquí podemos poner la dirección exacta luego).</p>
+                    <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-md">
+                        <!-- Placeholder for Google Map -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13303!2d-70.6!3d-33.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1610000000000!5m2!1ses-419!2scl" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact & Form -->
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-rustic-900 mb-6">Reservas y Contacto</h2>
+                    <div class="bg-white rounded-xl shadow-md p-8 border border-rustic-200">
+                        <div class="mb-8">
+                            <p class="text-rustic-800 text-lg mb-2">Llámanos o escríbenos por WhatsApp para consultar disponibilidad:</p>
+                            <a href="tel:+56912345678" class="text-2xl font-bold text-rustic-800 hover:text-rustic-900 flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                +56 9 1234 5678
+                            </a>
+                        </div>
+                        
+                        <hr class="border-rustic-200 mb-6">
+                        
+                        <h3 class="text-xl font-bold text-rustic-900 mb-4">Envíanos un mensaje</h3>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-rustic-800">Nombre</label>
+                                <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-rustic-300 shadow-sm focus:border-rustic-800 focus:ring-rustic-800 px-4 py-2 border bg-rustic-50" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-rustic-800">Teléfono / Correo</label>
+                                <input type="text" id="phone" name="phone" class="mt-1 block w-full rounded-md border-rustic-300 shadow-sm focus:border-rustic-800 focus:ring-rustic-800 px-4 py-2 border bg-rustic-50" placeholder="¿Cómo te contactamos?">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-rustic-800">Mensaje</label>
+                                <textarea id="message" name="message" rows="3" class="mt-1 block w-full rounded-md border-rustic-300 shadow-sm focus:border-rustic-800 focus:ring-rustic-800 px-4 py-2 border bg-rustic-50" placeholder="¿Para qué fecha buscas reservar?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-rustic-800 hover:bg-rustic-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rustic-900">
+                                Enviar Consulta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-rustic-900 text-rustic-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-serif text-xl mb-4">Casa Requehua</p>
+            <p class="text-sm">© 2024 Casa Requehua. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

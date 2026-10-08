@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Casa Requehua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rustic: {
+                            50: '#faf8f5',
+                            100: '#f5f0e6',
+                            200: '#e3d5ca',
+                            300: '#d5bdaf',
+                            400: '#d4a373',
+                            800: '#8b5e3c',
+                            900: '#5c3d26'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-rustic-50 text-rustic-900 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-rustic-100/90 backdrop-blur-md sticky top-0 z-50 border-b border-rustic-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-serif font-bold text-rustic-800 tracking-wider">CASA REQUEHUA</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-rustic-900 hover:text-rustic-800 font-medium">Inicio</a>
+                    <a href="index.html#about" class="text-rustic-900 hover:text-rustic-800 font-medium">Nosotros</a>
+                    <a href="gallery.html" class="text-rustic-800 font-medium border-b-2 border-rustic-800">Galería</a>
+                    <a href="index.html#contact" class="text-rustic-900 hover:text-rustic-800 font-medium">Reservas</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-rustic-900 hover:text-rustic-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-rustic-100 border-t border-rustic-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-rustic-900 hover:bg-rustic-200 rounded-md">Inicio</a>
+                <a href="index.html#about" class="block px-3 py-2 text-base font-medium text-rustic-900 hover:bg-rustic-200 rounded-md">Nosotros</a>
+                <a href="gallery.html" class="block px-3 py-2 text-base font-medium text-rustic-800 bg-rustic-200 rounded-md">Galería</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-base font-medium text-rustic-900 hover:bg-rustic-200 rounded-md">Reservas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Content -->
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <h1 class="text-4xl font-serif font-bold text-center text-rustic-900 mb-4">Galería de Imágenes</h1>
+        <p class="text-center text-rustic-800 mb-12 max-w-2xl mx-auto">Conoce nuestras instalaciones, la piscina, el quincho y las áreas verdes que harán de tu evento un momento especial.</p>
+
+        <!-- Masonry-ish Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Video Item 1 -->
+            <div class="group relative overflow-hidden rounded-xl shadow-md bg-rustic-200 aspect-w-4 aspect-h-3 flex items-center justify-center">
+                <video class="w-full h-full object-cover" controls loop muted playsinline>
+                    <source src="IMG_1515.MOV" type="video/mp4">
+                    <source src="IMG_1515.MOV" type="video/quicktime">
+                </video>
+            </div>
+            
+            <!-- Video Item 2 -->
+            <div class="group relative overflow-hidden rounded-xl shadow-md bg-rustic-200 aspect-w-4 aspect-h-3 flex items-center justify-center">
+                <video class="w-full h-full object-cover" controls loop muted playsinline>
+                    <source src="IMG_1522.MOV" type="video/mp4">
+                    <source src="IMG_1522.MOV" type="video/quicktime">
+                </video>
+            </div>
+
+            <!-- Placeholder for images -->
+            <div class="group relative overflow-hidden rounded-xl shadow-md bg-rustic-200 aspect-w-4 aspect-h-3 flex items-center justify-center border-2 border-dashed border-rustic-300">
+                <p class="text-rustic-800 p-4 text-center">Espacio para foto<br>(Agrega aquí tus imágenes)</p>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl shadow-md bg-rustic-200 aspect-w-4 aspect-h-3 flex items-center justify-center border-2 border-dashed border-rustic-300">
+                <p class="text-rustic-800 p-4 text-center">Espacio para foto</p>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl shadow-md bg-rustic-200 aspect-w-4 aspect-h-3 flex items-center justify-center border-2 border-dashed border-rustic-300">
+                <p class="text-rustic-800 p-4 text-center">Espacio para foto</p>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl shadow-md bg-rustic-200 aspect-w-4 aspect-h-3 flex items-center justify-center border-2 border-dashed border-rustic-300">
+                <p class="text-rustic-800 p-4 text-center">Espacio para foto</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-rustic-900 text-rustic-200 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-serif text-xl mb-4">Casa Requehua</p>
+            <p class="text-sm">© 2024 Casa Requehua. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
